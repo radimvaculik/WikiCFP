@@ -11,6 +11,7 @@
 # generated files
 bin/
 gen/
+nbandroid/
 
 # Local configuration file (sdk path, etc)
 local.properties
