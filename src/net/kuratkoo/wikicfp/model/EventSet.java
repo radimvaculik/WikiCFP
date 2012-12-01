@@ -9,6 +9,7 @@ import net.kuratkoo.wikicfp.tools.Tools;
 
 /**
  * EventSet
+ * 
  * @author Radim -kuratkoo- Vaculik <kuratkoo@gmail.com>
  */
 public class EventSet extends ArrayList<Event> {

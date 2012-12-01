@@ -1,23 +1,26 @@
 package net.kuratkoo.wikicfp;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.actionbarsherlock.app.SherlockListActivity;
+import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.Window;
 import java.io.IOException;
 import net.kuratkoo.wikicfp.adapter.EventListAdapter;
 import net.kuratkoo.wikicfp.model.Event;
 import net.kuratkoo.wikicfp.model.EventSet;
 
+/**
+ * SearchActivity
+ * 
+ * @author Radim -kuratkoo- Vaculik <kuratkoo@gmail.com>
+ */
 public class SearchActivity extends SherlockListActivity implements AdapterView.OnItemClickListener {
 
     private static final String TAG = "WikiCFP|SearchActivity";
@@ -35,6 +38,7 @@ public class SearchActivity extends SherlockListActivity implements AdapterView.
         search = extras.getString("search");
 
         getSupportActionBar().setTitle(search);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mListView = getListView();
         mListView.setOnItemClickListener(this);
@@ -54,6 +58,23 @@ public class SearchActivity extends SherlockListActivity implements AdapterView.
         i.putExtra("location", e.getLocation());
         i.putExtra("deadline", e.getDeadline());
         startActivity(i);
+    }
+    
+        
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: {
+                Intent intent = new Intent(this, CategoryActivity.class);            
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 
+                startActivity(intent);            
+                return true;   
+            }
+            default: {
+                super.onOptionsItemSelected(item);
+            } break;
+        }
+        return true;
     }
 
     private class CategoryAsyncTask extends AsyncTask<Void, Integer, Exception> {

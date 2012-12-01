@@ -7,12 +7,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import net.kuratkoo.wikicfp.R;
-import net.kuratkoo.wikicfp.model.Category;
 import net.kuratkoo.wikicfp.model.Event;
 import net.kuratkoo.wikicfp.model.EventSet;
 
 /**
  * EventListAdapter
+ * 
  * @author Radim -kuratkoo- Vaculik <kuratkoo@gmail.com>
  */
 public class EventListAdapter extends BaseAdapter {
@@ -64,6 +64,7 @@ public class EventListAdapter extends BaseAdapter {
         return convertView;
     }
 }
+
 class EventViewHolder {
     TextView title;
     TextView subtitle;

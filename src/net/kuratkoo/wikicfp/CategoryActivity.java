@@ -1,17 +1,15 @@
 package net.kuratkoo.wikicfp;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.actionbarsherlock.app.SherlockListActivity;
+import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.Window;
 import java.io.IOException;
 import net.kuratkoo.wikicfp.adapter.EventListAdapter;
@@ -35,6 +33,7 @@ public class CategoryActivity extends SherlockListActivity implements AdapterVie
         category = extras.getString("category");
 
         getSupportActionBar().setTitle(category.substring(0, 1).toUpperCase() + category.substring(1));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mListView = getListView();
         mListView.setOnItemClickListener(this);
@@ -42,7 +41,23 @@ public class CategoryActivity extends SherlockListActivity implements AdapterVie
 
         new CategoryAsyncTask().execute();
     }
-
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: {
+                Intent intent = new Intent(this, MainActivity.class);            
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 
+                startActivity(intent);            
+                return true;   
+            }
+            default: {
+                super.onOptionsItemSelected(item);
+            } break;
+        }
+        return true;
+    }
+    
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Event e = mEventSet.get(position);
         Intent i = new Intent(CategoryActivity.this, EventActivity.class);
@@ -52,6 +67,7 @@ public class CategoryActivity extends SherlockListActivity implements AdapterVie
         i.putExtra("when", e.getWhen());
         i.putExtra("location", e.getLocation());
         i.putExtra("deadline", e.getDeadline());
+        i.putExtra("category", category);
         startActivity(i);
     }
 

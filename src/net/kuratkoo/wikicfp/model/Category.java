@@ -2,9 +2,12 @@ package net.kuratkoo.wikicfp.model;
 
 /**
  * Category
+ * 
  * @author Radim -kuratkoo- Vaculik <kuratkoo@gmail.com>
  */
 public class Category {
+    private static final String TAG = "WikiCFP|Category";
+
     private String name;
     private String count;
     private Boolean star;

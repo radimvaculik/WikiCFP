@@ -2,8 +2,6 @@ package net.kuratkoo.wikicfp.model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.util.Log;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;

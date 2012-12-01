@@ -22,7 +22,7 @@
             android:paddingTop="5dp">
             <TextView
                 android:textColor="#000000"
-                android:text="Location: "
+                android:text="@string/location"
                 android:textSize="16dp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
             android:paddingTop="5dp">
             <TextView
                 android:textColor="#000000"
-                android:text="Term: "
+                android:text="@string/term"
                 android:textStyle="bold"
                 android:textSize="16dp"
                 android:layout_width="wrap_content"
@@ -60,7 +60,7 @@
             android:paddingTop="5dp">
             <TextView
                 android:textColor="#000000"
-                android:text="Deadline: "
+                android:text="@string/deadline"
                 android:textStyle="bold"
                 android:textSize="16dp"
                 android:layout_width="wrap_content"
@@ -85,7 +85,7 @@
                 android:paddingTop="5dp">
                 <TextView
                     android:textColor="#000000"
-                    android:text="Notification: "
+                    android:text="@string/notification"
                     android:textStyle="bold"
                     android:textSize="16dp"
                     android:layout_width="wrap_content"
@@ -105,7 +105,7 @@
                 android:paddingTop="5dp">
                 <TextView
                     android:textColor="#000000"
-                    android:text="Final Version: "
+                    android:text="@string/final_version"
                     android:textStyle="bold"
                     android:textSize="16dp"
                     android:layout_width="wrap_content"
@@ -125,7 +125,7 @@
                 android:paddingTop="5dp">
                 <TextView
                     android:textColor="#000000"
-                    android:text="Link: "
+                    android:text="@string/link"
                     android:textStyle="bold"
                     android:textSize="16dp"
                     android:layout_width="wrap_content"
@@ -140,7 +140,7 @@
             </LinearLayout>    
             <TextView
                 android:textColor="#000000"
-                android:text="Categories: "
+                android:text="@string/categories"
                 android:textStyle="bold"
                 android:textSize="16dp"
                 android:paddingTop="5dp"
@@ -155,7 +155,7 @@
                 android:layout_height="wrap_content"/>
             <TextView
                 android:textColor="#000000"
-                android:text="Description: "
+                android:text="@string/description"
                 android:textStyle="bold"
                 android:paddingTop="5dp"
                 android:textSize="16dp"
@@ -165,13 +165,14 @@
                 android:paddingTop="5dp"
                 android:paddingLeft="5dp"
                 android:id="@+id/description"
+                android:autoLink="web|email"
                 android:textColor="#000000"
                 android:textSize="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>          
             <TextView
                 android:textColor="#000000"
-                android:text="Related CFPs:"
+                android:text="@string/related_cfp"
                 android:textStyle="bold"
                 android:textSize="16dp"
                 android:layout_width="wrap_content"

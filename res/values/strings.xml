@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">WikiCFP</string>
-    <string name="preferences">Preferences</string>
-    <string name="calendar">Calendar</string>
     <string name="map">Map</string>
-    <string name="showOnlyFav">Show only stared</string>
-    <string name="showOnlyFavSummary">Only stared categories will be show</string>
+    <string name="categories_title">Categories</string>
+    <string name="search">Search for CFP…</string>
+    <string name="support_app">Support WikiCFP</string>
+    <string name="support_like_it">Do you like WikiCFP application?</string>
+    <string name="support_rate">Please take a moment to rate it at Google Play. Thanks for your support!</string>
+    <string name="location">Location:&#160;</string>
+    <string name="term">Term:&#160;</string>
+    <string name="deadline">Deadline:&#160;</string>
+    <string name="notification">Notification:&#160;</string>
+    <string name="final_version">Final Version:&#160;</string>
+    <string name="link">Link:&#160;</string>
+    <string name="categories">Categories:&#160;</string>
+    <string name="description">Description:&#160;</string>
+    <string name="related_cfp">Related CFPs:</string>
 </resources>

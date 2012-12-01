@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +27,7 @@ public class EventActivity extends SherlockActivity {
 
     private static final String TAG = "WikiCFP|EventActivity";
     private Event mEvent;
+    private String category;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -45,12 +45,15 @@ public class EventActivity extends SherlockActivity {
         mEvent.setWhen(extras.getString("when"));
         mEvent.setDeadline(extras.getString("deadline"));
         
+        category = extras.getString("category");
+        
         ((TextView) findViewById(R.id.subtitle)).setText(mEvent.getSubtitle());
         ((TextView) findViewById(R.id.location)).setText(mEvent.getLocation());
         ((TextView) findViewById(R.id.when)).setText(mEvent.getWhen());
         ((TextView) findViewById(R.id.deadline)).setText(mEvent.getDeadline());
         
         getSupportActionBar().setTitle(mEvent.getTitle());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         new EventAsyncTask().execute();
     }
@@ -69,6 +72,17 @@ public class EventActivity extends SherlockActivity {
             case R.id.map: {
                 String uri = "geo:0,0?q=" + mEvent.getLocation();
                 startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
+                return true;
+            }
+            case android.R.id.home: {
+                Intent intent = new Intent(this, CategoryActivity.class);
+                intent.putExtra("category", category);            
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 
+                startActivity(intent);            
+                return true;   
+            }
+            default: {
+                super.onOptionsItemSelected(item);
             } break;
         }
         return true;
