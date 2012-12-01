@@ -1,6 +1,5 @@
 package net.kuratkoo.wikicfp.model;
 
-import android.util.Log;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.regex.MatchResult;
