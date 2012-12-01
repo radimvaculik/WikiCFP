@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WikiCFP</string>
+    <string name="preferences">Preferences</string>
+    <string name="calendar">Calendar</string>
+    <string name="map">Map</string>
+    <string name="showOnlyFav">Show only stared</string>
+    <string name="showOnlyFavSummary">Only stared categories will be show</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/map"
+        android:icon="@drawable/ic_menu_map"
+        android:title="@string/map"
+        android:showAsAction="ifRoom"/>    
+</menu> 

@@ -14,6 +14,7 @@ gen/
 
 # Local configuration file (sdk path, etc)
 local.properties
+keystore.keystore
 
 # Eclipse project files
 .classpath
