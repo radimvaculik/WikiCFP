@@ -1,6 +1,7 @@
 package net.kuratkoo.wikicfp.model;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
@@ -34,6 +35,7 @@ public class EventSet extends ArrayList<Event> {
     }    
 
     public void search(String search) throws IOException {
+        search = URLEncoder.encode(search, "UTF-8");
         StringBuilder content = Tools.getContent("http://wikicfp.com/cfp/servlet/tool.search?q=" + search + "&year=a");
         Pattern p = Pattern.compile("<td rowspan=\"2\" align=\"left\"><a href=\"/cfp/servlet/event.showcfp\\?eventid=([0-9]+)&amp;copyownerid=[0-9]+\">([^<]+)</a></td><td align=\"left\" colspan=\"3\">([^<]+)</td></tr><tr bgcolor=\"[^\"]+\"><td align=\"left\">([^<]+)</td><td align=\"left\">([^<]+)</td><td align=\"left\">([^<]+)</td></tr>");
         Matcher m = p.matcher(content.toString().replace("\n", ""));
